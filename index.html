@@ -1,0 +1,16 @@
+---
+layout: default
+title: John1king's Blog
+---
+
+<h1>目录</h1>
+<ul class="index">
+{% for post in site.posts %}
+  <li><span class="date">{{ post.date | date: "%Y/%m/%d" }}</span> <a href="{{ post.url }}">{{ post.title }}</a></li>
+{% endfor %}
+</ul>
+
+<div id="footer">
+  Powered by <a href="https://github.com/mojombo/jekyll/">Jekyll</a>, Posted by <a href="https://twitter.com/john1king">@john1king</a>
+</div>
+
