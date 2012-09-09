@@ -3,7 +3,7 @@ layout: post
 title: Python tricks
 ---
 
-本文的内容主要来自《Python 基本教程第二版》，摘录了比较有用但容易被忽视的小技巧。代码全部基于 Python 2.7.3
+本文的内容主要来自《Python 基础教程第二版》，摘录了比较有用但容易被忽视的小技巧。代码全部基于 `Python 2.7.3`
 
 
 ## 运算符与语句
@@ -34,7 +34,7 @@ python 中没有三元操作符，只有类似的条件表达式
   # => False
 {% endhighlight %}
 
-整除操作符 `//` 常用计算数组下标, 类似于 JS 中的 `Math.floor(array.length/n)`
+整除操作符 `//` 常用于计算数组下标, 类似 JS 中的 `Math.floor(array.length/n)`
 {% highlight python %}
   lst = range(9)
   lst[:len(lst)//2]
@@ -49,7 +49,6 @@ python 中没有三元操作符，只有类似的条件表达式
   # => True
 {% endhighlight %}
 
-## 转换说明符
 
 使用转换说明符代替字符串连接
 {% highlight python %}
@@ -132,7 +131,7 @@ sort 方法默认按升序排序元素, reverse 参数可以指定排列顺序
 
 ## 循环与迭代
 
-在迭代时为序列加上序号
+为迭代对象加上序号
 {% highlight python %}
   for index, value in enumerate('abc'):
       print index, value
