@@ -108,6 +108,19 @@ ul.index .date {
   font-size:12px;
 }
 
+code {
+  border-radius:3px;
+  border:1px solid #e6e6e6;
+  background:#fafafa;
+  padding:2px 4px;
+}
+
+.highlight code {
+  border:0 none;
+  padding:0;
+  background:none;
+}
+
 #disqus_thread {
   margin: 30px 10px;
 }
