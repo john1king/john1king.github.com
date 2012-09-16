@@ -46,7 +46,7 @@ django.forms.Form 类的表单字段属性能够按照定义顺序排列是一�
       __metaclass__ = Metaclass
 
   print Usage.meta
-  # => metaclass 
+  # => 'metaclass'
 {% endhighlight %}
 
 实际应用中可能需要通过继承一个元类的实例来隐藏元类的实现细节
@@ -84,7 +84,7 @@ Django 中包含一个实用的函数来简化这个过程
 
   class FormMeta(type):
       def __new__(cls, name, bases, attrs):
-          base_fields = [(name, value)for name, value in attrs.iteritems() if isinstance(value, Field)]
+          base_fields = [(name, value) for name, value in attrs.iteritems() if isinstance(value, Field)]
           base_fields.sort(key=lambda x: x[1].creation_counter)
           attrs['base_fields'] = [name for name, value in base_fields]
           return super(FormMeta, cls).__new__(cls, name, bases, attrs)

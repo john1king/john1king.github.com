@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 迭代器
+title: 迭代
 ---
 
 
@@ -83,7 +83,7 @@ map, select, inject 方法实际上来自 Enumerable 模块。任何对象只要
   # => [2, 1, 0]
 {% endhighlight %}
 
-Enumerable 模块实例了很多常用的方法。当这些方法没有接收到代码块参数时，会返回一个可迭代对象(Enumerator)，这个仍然能够调用  Enumerable 模块的方法。因此可以联合使用几个迭代器，一次达成目标。下例为实现选择偶数位置的字符的一种方法
+Enumerable 模块实例了很多常用的方法。当这些方法没有接收到代码块参数时，会返回一个可迭代对象(Enumerator)，这个仍然能够调用  Enumerable 模块的方法。因此可以联合使用几个迭代器，一次达成目标。下面的例子为选择偶数位置的字符的一种方法
 
 
 {% highlight ruby %}
