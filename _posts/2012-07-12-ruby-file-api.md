@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Ruby文件操作
+title: Ruby 文件操作
 ---
 
 文件操作总是最为基本和常用的，本文主要介绍 Ruby 中一些常用的文件操作 api 和陷阱
