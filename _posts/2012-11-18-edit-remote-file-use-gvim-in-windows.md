@@ -29,22 +29,23 @@ Windows 下并没有原生的 scp 工具可用，需要自己安装。比较常�
   scp root@192.168.1.11:.ssh/authorized_keys /C/tmp/authorized_keys
 {% endhighlight %}
 
-msysgit 的 scp 命令不能用识别 Window 下的 `C:` 格式的盘符，需要将其转换为 `/C/` 格式。vim 的 netrw 插件并不直接支持这种格式的路径，默认情况下 netrw 把临时文件保存在操作系统的临时文件下（`:! set TEMP` 查看）。因此编辑远程文件时会出问题。所幸的是 netrw 提供了对 Cygwin 的支持，对其进行稍加修改就能够支持 msysgit 的 scp。
+msysgit 的 scp 命令不能用识别 Window 下的 `C:` 格式的盘符，需要将其转换为 `/C/` 格式。vim 的 netrw 插件并不直接支持这种格式的路径，默认情况下 netrw 把临时文件保存在操作系统的临时文件下（可以使用 `:! set TEMP` 查看）。因此编辑远程文件时会出问题。所幸的是 netrw 提供了对 Cygwin 的支持，对其进行稍加修改就能够支持 msysgit 的 scp。
 
-1. 打开 `$VIM\vim73\autoload\netrw.vim`
-2. 替换所有的 `cygdrive/` 为 `/` 后保存(也许你应该在替换前确认到底做了哪些修改)
+1) 打开 `$VIM\vim73\autoload\netrw.vim`
 
-  {% highlight html %}
-   :%s/cygdrive\///g
-   :wq
-  {% endhighlight %}
+2) 替换所有的 `cygdrive/` 为 `/` 后保存(也许你应该在替换前确认到底做了哪些修改)
 
-3. 配置 vimrc , 使 Cygwin 模式。如果系统临时文件目录比较长，名称中包含 `~` 等字符，还需要修改临时文件的目录 `$TMP`。vim 生成的临时文件名可以使用 `:echo tempname()` 查看。
+{% highlight html %}
+ :%s/cygdrive\///g
+ :wq
+{% endhighlight %}
 
-  {% highlight html %}
-    let g:netrw_cygwin = 1
-    let $TMP='C:\tmp\'
-  {% endhighlight %}
+3) 配置 vimrc , 使 Cygwin 模式。如果系统临时文件目录比较长，名称中包含 `~` 等字符，还需要修改临时文件的目录 `$TMP`。vim 生成的临时文件名可以使用 `:echo tempname()` 查看。
+
+{% highlight html %}
+  let g:netrw_cygwin = 1
+  let $TMP='C:\tmp\'
+{% endhighlight %}
 
 到此已经可以正常使用 scp 编辑远程文件了。在配置好 ssh key 之后，可以加入选项
 
