@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 迭代
+title: Ruby, Python 和 JavaScript 中的迭代器
 ---
 
 
