@@ -40,7 +40,7 @@ title: CentOS 下安装 Django
 
 pip 是最好的 python 包管理工具，通过环境变量 `PIP_DOWNLOAD_CACHE` 可以设置 pip 的缓存目录
 
-{% endhighlight %}
+{% highlight html %}
   vi ~/.bash_profile
   export PIP_DOWNLOAD_CACHE=/mnt/share/pip/
   source ~/.bash_profile
