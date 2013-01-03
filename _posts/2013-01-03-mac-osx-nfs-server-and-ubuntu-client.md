@@ -1,12 +1,12 @@
 ---
 layout: post
-title: 使用 Ubuntu 挂载 Mac OSX 下的 NFS 服务
+title: 使用 Ubuntu 挂载 Mac OSX 下的 NFS 目录
 ---
 
 
-本文环境: Ubuntu Server 12.10 虚拟机与 Mac OSX 10.74
+本文环境: Ubuntu Server 12.10 虚拟机，Mac OSX 10.74
 
-## 启动 Max OSX 的 NFS 服务器
+## 配置 NFS 服务
 
 1) 编辑或创建 `/etc/exports` 文件，添加导出的目录
 
@@ -72,5 +72,5 @@ Ubuntu 系统需要安装 `nfs-common` 才能挂载 NFS
 ## 参考链接
 
 - [How to Share Directories over NFS with Mac OS X](http://www.behanna.org/osx/nfs/howto1.html)
-- [exports(5) OS X Manual Page](https://developer.apple.com/library/mac/#documentation/Darwin/Reference/ManPages/man5/exports.5.html) (`/etc/exports`文件格式参考)
+- [exports(5) OS X Manual Page](https://developer.apple.com/library/mac/#documentation/Darwin/Reference/ManPages/man5/exports.5.html) (/etc/exports 文件格式参考)
 - [Mounting NFS File Systems using /etc/fstab](http://www.centos.org/docs/5/html/5.1/Deployment_Guide/s2-nfs-fstab.html)
